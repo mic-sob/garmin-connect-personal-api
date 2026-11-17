@@ -11,16 +11,16 @@ Nazwy metod w `camelCase`.
 
 ## Decyzje (ustalone)
 
-| Temat | Decyzja |
-|---|---|
-| Nazwa pakietu | `@mic-sob/garmin-connect-personal-api` |
-| Platforma | Node ≥18 (bez przeglądarki na razie) |
-| HTTP | globalny `fetch`; wstrzykiwalny dla testów |
-| Styl metod | `camelCase` (patrz tabela odwzorowań w README) |
-| Typowanie | pełne, z OpenAPI; bez walidacji runtime (bez zod) |
-| Nazwy typów | verbatim ze speca (z sufiksem `DTO`) |
-| Licencja | Apache-2.0 + atrybucja Garmin |
-| Zakres v1 | rdzeń: auth + client + błędy. Bez CLI, bez przeglądarki |
+| Temat         | Decyzja                                                 |
+| ------------- | ------------------------------------------------------- |
+| Nazwa pakietu | `@mic-sob/garmin-connect-personal-api`                  |
+| Platforma     | Node ≥18 (bez przeglądarki na razie)                    |
+| HTTP          | globalny `fetch`; wstrzykiwalny dla testów              |
+| Styl metod    | `camelCase` (patrz tabela odwzorowań w README)          |
+| Typowanie     | pełne, z OpenAPI; bez walidacji runtime (bez zod)       |
+| Nazwy typów   | verbatim ze speca (z sufiksem `DTO`)                    |
+| Licencja      | Apache-2.0 + atrybucja Garmin                           |
+| Zakres v1     | rdzeń: auth + client + błędy. Bez CLI, bez przeglądarki |
 
 ## Źródło typów
 
@@ -60,16 +60,16 @@ Przeniesione z [`gcpapi-sync`](https://github.com/thomascamminady/gcpapi-sync-py
 
 ## Architektura (moduły)
 
-| Plik | Zawartość | Wzorzec w Pythonie |
-|---|---|---|
-| `src/constants.ts` | base URL, `TOKEN_PATH`, env-y, timeout, ścieżki | `constants.py` |
-| `src/errors.ts` | `GarminPersonalApiError`, `HttpError` | `errors.py` |
-| `src/types/garmin.d.ts` | typy OpenAPI (generowane) | — |
-| `src/client.ts` | `GarminPersonalApiClient`, 26 wrapperów, `get`, `downloadActivity` | `client.py` |
-| `src/auth.ts` | `BearerToken`, `PersonalApiAuthenticator`, `FileTokenCache`, JWT `exp` | `auth.py` |
-| `src/apiKeys.ts` | `resolveApiKey` (klucz arg → plik → env → domyślny plik) | `api_keys.py` |
-| `src/credentials.ts` | walidacja klucza, ostrzeżenie `chmod 600` | `_credentials.py` |
-| `src/index.ts` | eksport publiczny | `__init__.py` |
+| Plik                    | Zawartość                                                              | Wzorzec w Pythonie |
+| ----------------------- | ---------------------------------------------------------------------- | ------------------ |
+| `src/constants.ts`      | base URL, `TOKEN_PATH`, env-y, timeout, ścieżki                        | `constants.py`     |
+| `src/errors.ts`         | `GarminPersonalApiError`, `HttpError`                                  | `errors.py`        |
+| `src/types/garmin.d.ts` | typy OpenAPI (generowane)                                              | —                  |
+| `src/client.ts`         | `GarminPersonalApiClient`, 26 wrapperów, `get`, `downloadActivity`     | `client.py`        |
+| `src/auth.ts`           | `BearerToken`, `PersonalApiAuthenticator`, `FileTokenCache`, JWT `exp` | `auth.py`          |
+| `src/apiKeys.ts`        | `resolveApiKey` (klucz arg → plik → env → domyślny plik)               | `api_keys.py`      |
+| `src/credentials.ts`    | walidacja klucza, ostrzeżenie `chmod 600`                              | `_credentials.py`  |
+| `src/index.ts`          | eksport publiczny                                                      | `__init__.py`      |
 
 ## Transport
 

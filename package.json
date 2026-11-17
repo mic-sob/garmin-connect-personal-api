@@ -1,21 +1,22 @@
 {
-  "name": "connect-personal-api-node",
-  "version": "0.0.0",
-  "description": "A starter for creating a TypeScript package.",
-  "homepage": "https://github.com/author/library#readme",
+  "name": "@mic-sob/garmin-connect-personal-api",
+  "version": "0.1.0",
+  "description": "TypeScript client for the Garmin Connect Personal API",
+  "homepage": "https://github.com/mic-sob/garmin-connect-personal-api#readme",
   "bugs": {
-    "url": "https://github.com/author/library/issues"
+    "url": "https://github.com/mic-sob/garmin-connect-personal-api/issues"
   },
-  "license": "MIT",
-  "author": "Author Name <author.name@mail.com>",
+  "license": "Apache-2.0",
+  "author": "mic-sob",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/author/library.git"
+    "url": "git+https://github.com/mic-sob/garmin-connect-personal-api.git"
   },
   "files": [
     "dist"
   ],
   "type": "module",
+  "sideEffects": false,
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
@@ -28,6 +29,7 @@
     "dev": "vp pack --watch",
     "test": "vp test",
     "check": "vp check",
+    "generate:types": "node scripts/fetch-openapi.mjs && pnpm dlx openapi-typescript@7.13.0 openapi.patched.json -o src/types/garmin.ts",
     "prepublishOnly": "vp run build",
     "prepare": "vp config"
   },
@@ -42,5 +44,8 @@
       "version": "12.21.0",
       "onFail": "download"
     }
+  },
+  "engines": {
+    "node": ">=18"
   }
 }
