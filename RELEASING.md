@@ -5,9 +5,20 @@ push and publishes on `v*` tags.
 
 ## Prerequisites
 
-- A GitHub repository with the `NPM_TOKEN` secret set to an npm automation
-  access token.
+- npm Trusted Publishing configured for the GitHub repository (see below) —
+  no npm token is stored in GitHub.
 - `@mic-sob` scope on npm, or change `publishConfig.access` to `"restricted"`.
+
+## Trusted publishing (OIDC)
+
+The publish workflow authenticates with a short-lived OIDC token, not a stored
+secret. Configure it once on npm:
+
+1. Ensure the package exists on npm (publish it once manually if needed).
+2. On the package page: **Settings → Access → Trusted Publishing →
+   Add trusted publisher**.
+3. Owner = the GitHub user/org, Repository = this repo,
+   Workflow = `publish.yml`, Environment = (leave empty).
 
 ## Steps
 
