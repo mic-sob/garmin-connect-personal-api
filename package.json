@@ -2,6 +2,16 @@
   "name": "@mic-sob/garmin-connect-personal-api",
   "version": "0.1.0",
   "description": "TypeScript client for the Garmin Connect Personal API",
+  "keywords": [
+    "activity",
+    "fitness",
+    "garmin",
+    "garmin-connect",
+    "health",
+    "hrv",
+    "personal-api",
+    "sleep"
+  ],
   "homepage": "https://github.com/mic-sob/garmin-connect-personal-api#readme",
   "bugs": {
     "url": "https://github.com/mic-sob/garmin-connect-personal-api/issues"
@@ -17,8 +27,14 @@
   ],
   "type": "module",
   "sideEffects": false,
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": "./dist/index.mjs",
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
@@ -30,11 +46,13 @@
     "test": "vp test",
     "check": "vp check",
     "generate:types": "node scripts/fetch-openapi.mjs && pnpm dlx openapi-typescript@7.13.0 openapi.patched.json -o src/types/garmin.ts",
-    "prepublishOnly": "vp run build",
+    "prepublishOnly": "vp pack --attw --publint",
     "prepare": "vp config"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.5",
     "@types/node": "^26.6.5",
+    "publint": "^0.3.25",
     "typescript": "^7.0.2",
     "vite-plus": "catalog:"
   },

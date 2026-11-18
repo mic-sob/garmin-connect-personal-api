@@ -50,7 +50,10 @@ describe("resolveApiKey", () => {
   });
 
   test("a missing key produces a help message naming the default file", async () => {
-    await expect(resolveApiKey({ env: {} })).rejects.toThrow("No personal API key was provided");
+    const dir = await makeTempDir();
+    await expect(
+      resolveApiKey({ env: {}, defaultKeyFile: path.join(dir, "missing") }),
+    ).rejects.toThrow("No personal API key was provided");
   });
 
   test("a missing explicit file is an error, not a fallback", async () => {
