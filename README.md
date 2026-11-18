@@ -1,4 +1,4 @@
-# @mic-sob/garmin-connect-personal-api
+# @micsob/garmin-connect-personal-api
 
 TypeScript client for the [Garmin Connect Personal API](https://developer.garmin.com/gc-developer-program/personal/personal-api/).
 
@@ -16,7 +16,7 @@ A loose port of Garmin's [`connect-personal-api-python`](https://github.com/garm
 ## Install
 
 ```bash
-npm install @mic-sob/garmin-connect-personal-api
+npm install @micsob/garmin-connect-personal-api
 ```
 
 ## Authentication
@@ -30,7 +30,7 @@ import {
   PersonalApiAuthenticator,
   GarminPersonalApiClient,
   resolveApiKey,
-} from "@mic-sob/garmin-connect-personal-api";
+} from "@micsob/garmin-connect-personal-api";
 
 const authenticator = new PersonalApiAuthenticator();
 const token = await authenticator.obtainToken(await resolveApiKey());
@@ -112,7 +112,7 @@ The client exposes `get(path)` with an overload that returns the exact response
 type for a known path:
 
 ```ts
-import type { components, paths } from "@mic-sob/garmin-connect-personal-api";
+import type { components, paths } from "@micsob/garmin-connect-personal-api";
 
 type DailySleepDTO = components["schemas"]["DailySleepDTO"];
 ```

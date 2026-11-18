@@ -1,5 +1,5 @@
 {
-  "name": "@mic-sob/garmin-connect-personal-api",
+  "name": "@micsob/garmin-connect-personal-api",
   "version": "0.1.0",
   "description": "TypeScript client for the Garmin Connect Personal API",
   "keywords": [

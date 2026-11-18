@@ -7,7 +7,7 @@ push and publishes on `v*` tags.
 
 - npm Trusted Publishing configured for the GitHub repository (see below) —
   no npm token is stored in GitHub.
-- `@mic-sob` scope on npm, or change `publishConfig.access` to `"restricted"`.
+- `@micsob` scope on npm, or change `publishConfig.access` to `"restricted"`.
 
 ## Trusted publishing (OIDC)
 
