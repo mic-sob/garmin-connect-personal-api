@@ -12,15 +12,15 @@
     "personal-api",
     "sleep"
   ],
-  "homepage": "https://github.com/mic-sob/garmin-connect-personal-api#readme",
+  "homepage": "https://github.com/micsob/garmin-connect-personal-api#readme",
   "bugs": {
-    "url": "https://github.com/mic-sob/garmin-connect-personal-api/issues"
+    "url": "https://github.com/micsob/garmin-connect-personal-api/issues"
   },
   "license": "Apache-2.0",
   "author": "Michal Sobecki",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mic-sob/garmin-connect-personal-api.git"
+    "url": "git+https://github.com/micsob/garmin-connect-personal-api.git"
   },
   "files": [
     "dist"
